@@ -50,7 +50,7 @@ class User {
 		}	
 		else {
 			//return "ERROR: Server not available";
-			return 4;
+			return 4; 
 		}
 	}
 
