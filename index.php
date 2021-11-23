@@ -26,6 +26,12 @@ Route::add('/forgot',function(){
     header('Location: '. $newURL);
 });
 
+// Post route example
+Route::add('/about',function(){
+    $newURL = 'Views/about.html';
+    header('Location: '. $newURL);
+});
+
 // Get route example
 Route::add('/contact',function(){
     echo '
@@ -40,13 +46,6 @@ Route::add('/contact',function(){
     echo 'Contact:<br/>';
     print_r($_POST);
 },'post');
-
-// Post route example
-Route::add('/about',function(){
-    echo 'Contact:<br/>';
-    print_r($_POST);
-},'post');
-
 
 // Accept only numbers as parameter. Other characters will result in a 404 error
 Route::add('/user/([0-9]*)/([a-zA-Z0-9]*)',function($var1, $var2){
