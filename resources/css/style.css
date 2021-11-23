@@ -14,6 +14,10 @@ button {
 	border-radius: 5px;
 }
 
+input {
+	background: white;
+}
+
 footer {
 	color: white;
 	position: fixed;
@@ -73,6 +77,18 @@ li .logo:hover {
 	border-radius: 15px;
 }
 
+.success {
+	display: none;
+	position: relative;
+	top: 200px;
+	text-align: center;
+	background: #8AB7FF;
+	width: 350px;
+	padding: 20px;
+	height: auto;
+	border-radius: 15px;
+}
+
 .header {
 	color: ghostwhite;
 	transition: all 0.4s linear;
@@ -86,4 +102,8 @@ li .logo:hover {
 
 .right {
 	float: right;
+}
+
+#error {
+	color: red;
 }

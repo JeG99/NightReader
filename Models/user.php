@@ -36,17 +36,21 @@ class User {
 				$this->last_name = $row['USER_LNAME'];
 				$this->user = $row['USERNAME'];
 				$this->status = $row['STATUS'];
-				return "Succesfully logged in.";
+				//return "Succesfully logged in.";
+				return 1;
 			} 
 			else if($row == null) {
-				return "ERROR: This email is not registered.";
+				//return "ERROR: This email is not registered.";
+				return 2;
 			} 
 			else {
-				return "ERROR: Check your email or password.";	
+				//return "ERROR: Check your email or password.";	
+				return 3;
 			}
 		}	
 		else {
-			return "ERROR: Server not available";
+			//return "ERROR: Server not available";
+			return 4;
 		}
 	}
 
