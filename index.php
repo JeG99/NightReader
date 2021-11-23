@@ -26,6 +26,12 @@ Route::add('/forgot',function(){
     header('Location: '. $newURL);
 });
 
+// Add app route
+Route::add('/nightread',function(){
+    $newURL = 'Views/book.html';
+    header('Location: '. $newURL);
+});
+
 // Post route example
 Route::add('/about',function(){
     $newURL = 'Views/about.html';

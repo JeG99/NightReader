@@ -61,9 +61,11 @@ li .logo:hover {
 
 .logo {
 	float: left;
-	/*font-size: 17px;
-	font-kerning: 1px;*/
 	font-weight: bolder;
+}
+
+.left {
+	float: left;
 }
 
 .container {
@@ -77,6 +79,23 @@ li .logo:hover {
 	border-radius: 15px;
 }
 
+.container2 {
+	position: relative;
+	height: 700px;
+	text-align: center;
+}
+
+.container2 h1 {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+	color: ghostwhite;
+	transition: all 0.4s linear;
+	font-size: 200px;
+}
+
 .success {
 	display: none;
 	position: relative;
@@ -87,13 +106,6 @@ li .logo:hover {
 	padding: 20px;
 	height: auto;
 	border-radius: 15px;
-}
-
-.header {
-	color: ghostwhite;
-	transition: all 0.4s linear;
-	text-align: center;
-	font-size: 200px;
 }
 
 .header:hover {
