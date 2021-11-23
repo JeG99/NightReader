@@ -10,10 +10,10 @@
 	$user->setPassword(sha1($_POST['password']));
 
 	if($user->signup()) {
-		echo "Account succesfully created.";
+		echo "1";
 	}
 	else {
-		echo "There was a problem creating the account.";	
+		echo "2";	
 	}
 	$conn = null;
 ?>

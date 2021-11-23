@@ -9,7 +9,7 @@
 		$user->setPassword(sha1($_POST['password1']));		
 		
 		if($user->changepass()) {
-			echo "Password succesfully changed";
+			echo "1";
 		} /*
 		else {
 			echo "There was a problem changing the password.";
@@ -17,7 +17,7 @@
 		
 	}
 	else {
-		echo "Passwords must match.";
+		echo "2";
 	}
 
 	$conn = null;
