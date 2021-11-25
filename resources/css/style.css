@@ -1,6 +1,14 @@
 body {
-	background: rgb(216,173,228);
-	background: radial-gradient(circle, rgba(216,173,228,1) 15%, rgba(169,196,254,1) 100%);
+	background: rgb(63,96,204);
+	background: linear-gradient(318deg, rgba(63,96,204,1) 6%, rgba(1,6,18,1) 98%);
+	height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+html {
+    height: 100%;
 }
 
 input {
@@ -51,7 +59,7 @@ li a {
 }
 
 li a:hover {
-  	background-color: #8AB7FF;
+  	background-color: #688ecc;
 }
 
 li .logo:hover {
@@ -72,11 +80,20 @@ li .logo:hover {
 	position: relative;
 	top: 200px;
 	text-align: center;
-	background: #8AB7FF;
+	background: #688ecc;
 	width: 350px;
 	padding: 20px;
 	height: auto;
 	border-radius: 15px;
+}
+
+.poem-box {
+	visibility: hidden;
+	top: 60px;
+	width: 800px;
+	max-height: 810px;
+	overflow-y: auto;
+	scrollbar-width: thin;
 }
 
 .container2 {
@@ -101,7 +118,7 @@ li .logo:hover {
 	position: relative;
 	top: 200px;
 	text-align: center;
-	background: #8AB7FF;
+	background: #688ecc;
 	width: 350px;
 	padding: 20px;
 	height: auto;
@@ -116,6 +133,35 @@ li .logo:hover {
 	float: right;
 }
 
+.buttons-container {
+	position: sticky;
+}
+
+#poem {
+	font-size: larger;
+	white-space: pre-wrap;
+	text-align: left;
+	display: inline-block;
+}
+
 #error {
 	color: red;
+}
+
+/* width */
+::-webkit-scrollbar {
+	right: 5px;
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 2.5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #333;
+	border-radius: 25px;
 }
