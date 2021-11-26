@@ -1,5 +1,10 @@
 $(document).ready( function() {
 
+	$(document).on({
+		ajaxStart: function() { $('.loading').css('visibility', 'visible');    },
+		ajaxStop: function() { $('.loading').css('visibility', 'hidden'); }    
+	});
+
 	var xhr;
 
 	$(function () {
@@ -121,5 +126,7 @@ $(document).ready( function() {
 			});
 		});
 	});
+
+	$body = $("body");
 
 });

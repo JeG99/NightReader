@@ -1,6 +1,14 @@
 body {
-	background: rgb(216,173,228);
-	background: radial-gradient(circle, rgba(216,173,228,1) 15%, rgba(169,196,254,1) 100%);
+	background: rgb(63,96,204);
+	background: linear-gradient(318deg, rgba(63,96,204,1) 6%, rgba(1,6,18,1) 98%);
+	height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+html {
+    height: 100%;
 }
 
 input {
@@ -37,8 +45,8 @@ ul {
 	background-color: #222;
 }
 
-li {
-  	/*float: left;*/
+td a {
+	background: rgba(red, green, blue, 1);
 }
 
 li a {
@@ -51,7 +59,7 @@ li a {
 }
 
 li a:hover {
-  	background-color: #8AB7FF;
+  	background-color: #688ecc;
 }
 
 li .logo:hover {
@@ -69,14 +77,24 @@ li .logo:hover {
 }
 
 .container {
+	color: white;
 	position: relative;
 	top: 200px;
 	text-align: center;
-	background: #8AB7FF;
+	background: #222;
 	width: 350px;
 	padding: 20px;
 	height: auto;
 	border-radius: 15px;
+}
+
+.poem-box {
+	visibility: hidden;
+	top: 5%;
+	width: 800px;
+	max-height: 810px;
+	overflow-y: auto;
+	scrollbar-width: thin;
 }
 
 .container2 {
@@ -101,7 +119,7 @@ li .logo:hover {
 	position: relative;
 	top: 200px;
 	text-align: center;
-	background: #8AB7FF;
+	background: #688ecc;
 	width: 350px;
 	padding: 20px;
 	height: auto;
@@ -109,13 +127,123 @@ li .logo:hover {
 }
 
 .header:hover {
-	color: #222;
+	color: #000;
 }
 
 .right {
 	float: right;
 }
 
+.note {
+	position: relative;
+	top: 37%;
+	text-align: center;
+	font-size: xx-large;
+	color: white;
+}
+
+.search-bar-container {
+	width: auto;
+	text-align: center;
+}
+
+.search-bar {
+	flex: auto;
+	text-align: center;
+	position: relative;
+	display: inline-block;
+}
+
+.search-bar input {
+	float: left;
+	padding: 10px;
+	margin: 2.5px;
+	height: 40px;
+	width: 700px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 20px;
+	border-top-left-radius: 20px;
+}
+
+.search-bar button {
+	padding: 10px;
+	margin: 2.5px;
+	height: 40px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+.table-wrapper {
+	position: relative;
+	top: 5%;
+	overflow: hidden;
+	overflow-y: scroll;
+	height: 78%;
+}
+
+.loading {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: 
+                url('../img/ajax-loader.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+.loading {
+    visibility: hidden;
+}
+
+.loading {
+    display: block;
+}
+
+#poem {
+	font-size: larger;
+	white-space: pre-wrap;
+	text-align: left;
+	display: inline-block;
+}
+
 #error {
 	color: red;
+}
+
+#result {
+	width: 1000px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	text-align: left;
+/*	overflow-y: scroll;
+	max-height: 78%;
+	display: block;*/
+}
+
+/* width */
+::-webkit-scrollbar {
+	right: 5px;
+	width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 25px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #333;
+	border-radius: 25px;
 }
