@@ -1,3 +1,12 @@
+<?php 
+	session_start();
+	$options = "";
+	if (isset($_SESSION['id'])) {
+		$options .= '<li><a class="left" href="search.php">My NightReadings</a></li><li><a class="left" href="">Profile</a></li><li><a class="right" href="logout.php">Logout</a></li>';
+	} else {
+		$options .= '<li><a class="right" href="login.php">Login</a></li><li><a class="right" href="signup.php">Sign Up</a></li>';
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,12 +19,11 @@
 	<body>
 
 		<ul>
-			<li><a class="logo" href="home.html">NightReader</a></li>
-			<li><a class="left" href="book.html">NightReadings</a></li>
-			<li><a class="left" href="search.html">My NightReadings</a></li>
-			<li><a class="left" href="">Profile</a></li>
-			<li><a class="right" href="login.html">Login</a></li>
-			<li><a class="right" href="signup.html">Sign Up</a></li>
+			<li><a class="logo" href="/">NightReader</a></li>
+			<li><a class="left" href="book.php">NightReadings</a></li>
+			<?php
+				echo $options;
+			?>
 		</ul>
 
 		<h1 class="header">About NightReader</h1>

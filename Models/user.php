@@ -31,12 +31,19 @@ class User {
 		if($stmt->execute()) {
 			$row = $stmt->fetch(PDO::FETCH_ASSOC);
 			if(strcmp($this->pass, $row['PASSWORD']) === 0) {
+				session_start();
 				$this->uid = $row['USER_ID'];
 				$this->first_name = $row['USER_FNAME'];
 				$this->last_name = $row['USER_LNAME'];
 				$this->user = $row['USERNAME'];
 				$this->status = $row['STATUS'];
 				//return "Succesfully logged in.";
+				$_SESSION['id'] = $this->getUid();
+				$_SESSION['fname'] = $this->getFirstName();
+				$_SESSION['lname'] = $this->getLastName();
+				$_SESSION['username'] = $this->getUsername();
+				$_SESSION['email'] = $this->getEmail();
+
 				return 1;
 			} 
 			else if($row == null) {

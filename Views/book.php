@@ -1,3 +1,15 @@
+<?php 
+	session_start();
+	$options = "";
+	$buttons = "";
+	if (isset($_SESSION['id'])) {
+		$options .= '<li><a class="left" href="search.php">My NightReadings</a></li><li><a class="left" href="">Profile</a></li><li><a class="right" href="logout.php">Logout</a></li>';
+		$buttons .= '<button id="submit" type="submit">New poem</button> &nbsp; <button id="save" type="save">Save</button></div>'; 
+	} else {
+		$options .= '<li><a class="right" href="login.php">Login</a></li><li><a class="right" href="signup.php">Sign Up</a></li>';
+		$buttons .= '<button id="submit" type="submit">New poem</button>';
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,16 +21,15 @@
 		<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="../resources/js/ajax.js"></script>
 		<script src="../resources/js/poems.js"></script>
-		<title>Login</title>
+		<title>NightReads</title>
 	</head>
 	<body>
 
 		<ul>
-			<li><a class="logo" href="home.html">NightReader</a></li>
-			<li><a class="left" href="search.html">My NightReadings</a></li>
-			<li><a class="left" href="">Profile</a></li>
-            <li><a class="right" href="login.html">Login</a></li>
-			<li><a class="right" href="signup.html">Sign Up</a></li>
+			<li><a class="logo" href="/">NightReader</a></li>
+			<?php
+				echo $options;
+			?>
 		</ul>
 
 		<div class="container poem-box">
@@ -28,13 +39,7 @@
 				<br>
 				<div id="poem"></div>
 				<br><br>
-				<button id="submit" type="submit">
-					New poem
-				</button>
-				<button id="save" type="save">
-					Save
-				</button>
-			</div>
+				<?php echo $buttons ?>
 		</div>
 
 		<!--

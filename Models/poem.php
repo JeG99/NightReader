@@ -3,8 +3,9 @@
 class Poem {
     private $conn;
     private $table_name = "NightReader_Poems";
+    private $weak_table_name_1 = "NightReader_UserPoems";
 
-    public $pid; // poem id :)
+    public $pid;
     public $title;
     public $content;
     public $url;
@@ -15,7 +16,7 @@ class Poem {
         $this->conn = $db;
     }
 
-	function save() {
+	function save($user_id) {
 		$query = "
 			INSERT INTO " . $this->table_name . "
 			SET 
@@ -39,11 +40,28 @@ class Poem {
 		$stmt->bindParam(":poet_name", $this->poet_name);
 		$stmt->bindParam(":poet_url", $this->poet_url);
 
-		if($stmt->execute()) {
-			return true;
+        if($stmt->execute()) {
+			//return true;
+            $this->pid = $this->conn->lastInsertId();
 		}
 
-		return false;
+        $query = "
+			INSERT INTO " . $this->weak_table_name_1 . "
+			SET 
+            USER_ID=:user_id, 
+            POEM_ID=:poem_id";
+
+        $stmt = $this->conn->prepare($query);
+        $user_id = htmlspecialchars(strip_tags($user_id));
+        $this->pid = htmlspecialchars(strip_tags($this->pid));
+		$stmt->bindParam(":user_id", $user_id);
+		$stmt->bindParam(":poem_id", $this->pid);
+
+        if($stmt->execute()) {
+		    return true;
+		}
+
+        return false;
 		
 	}
 
