@@ -1,12 +1,13 @@
 $(document).ready( function() {
 
 	$(document).on({
-		ajaxStart: function() { $('.loading').css('visibility', 'visible');    },
+		ajaxStart: function() { $('.loading').css('visibility', 'visible');},
 		ajaxStop: function() { $('.loading').css('visibility', 'hidden'); }    
 	});
 
 	var xhr;
 
+	// login
 	$(function () {
 		$('#login').on('submit', function (e) {
 			e.preventDefault();
@@ -27,6 +28,7 @@ $(document).ready( function() {
 					switch(data) {
 						case '1':
 							console.log("Loggeado");
+							$(location).prop('href', '/');
 							break;
 						case '2':
 							document.getElementById("error").innerHTML = "ERROR: This email is not registered.";
@@ -51,6 +53,7 @@ $(document).ready( function() {
 		});
 	});
 
+	// signup
 	$(function () {
 		$('#signup').on('submit', function (e) {
 			e.preventDefault();
@@ -72,7 +75,7 @@ $(document).ready( function() {
 						case '1':
 							console.log("Cuenta creada");
 							$(".container").hide("drop");
-							$(".success").fadeIn();
+							$(location).prop('href', '/');
 							break;
 						case '2':
 							document.getElementById("error").innerHTML = "ERROR: This account could not be created.";
@@ -85,6 +88,7 @@ $(document).ready( function() {
 		});
 	});
 
+	// forgot pass
 	$(function () {
 		$('#forgot').on('submit', function (e) {
 			e.preventDefault();

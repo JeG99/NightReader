@@ -4,38 +4,74 @@ require 'Controllers/Route.php';
 
 // Add base route (startpage)
 Route::add('/',function(){
-    $newURL = 'Views/home.html';
-    header('Location: '. $newURL);
+    //echo '<script>console.log(' . $_SESSION['id'] . ');</script>';
+    $newURL = 'Views/home.php';
+    include_once ($newURL);
+    //header('Location: '. $newURL);
+});
+
+Route::add('/home.php',function(){
+    $newURL = 'Views/home.php';
+    include_once ($newURL);
+    //header('Location: '. $newURL);
+});
+
+Route::add('/search.php',function(){
+    $newURL = 'Views/search.php';
+    include_once ($newURL);
+    //header('Location: '. $newURL);
 });
 
 // Add login route
-Route::add('/login',function(){
-    $newURL = 'Views/login.html';
-    header('Location: '. $newURL);
+Route::add('/login.php',function(){
+    if (!isset($_SESSION['id'])) {
+        //echo '<script>console.log(' . $_SESSION['id'] . ');</script>';
+        //session_start();
+        $newURL = 'Views/login.php';
+        include_once ($newURL);        
+    }
+    //header('Location: '. $newURL);
 });
 
 // Add signup route
-Route::add('/signup',function(){
-    $newURL = 'Views/signup.html';
-    header('Location: '. $newURL);
+Route::add('/signup.php',function(){
+    $newURL = 'Views/signup.php';
+    include_once ($newURL);
+    //header('Location: '. $newURL);
 });
 
 // Add login route
-Route::add('/forgot',function(){
-    $newURL = 'Views/forgot.html';
-    header('Location: '. $newURL);
+Route::add('/forgot.php',function(){
+    $newURL = 'Views/forgot.php';
+    include_once ($newURL);
+    //header('Location: '. $newURL);
 });
 
 // Add app route
-Route::add('/nightread',function(){
-    $newURL = 'Views/book.html';
-    header('Location: '. $newURL);
+Route::add('/book.php',function(){
+    //if (!isset($_SESSION['id'])) {
+    //    session_start(); 
+    //}
+    $newURL = 'Views/book.php';
+    include_once ($newURL);
+    //header('Location: '. $newURL);
 });
 
 // Post route example
-Route::add('/about',function(){
-    $newURL = 'Views/about.html';
-    header('Location: '. $newURL);
+Route::add('/about.php',function(){
+    $newURL = 'Views/about.php';
+    include_once ($newURL);
+    //header('Location: '. $newURL);
+});
+
+Route::add('/logout.php',function(){
+    session_start();
+    session_unset();
+    session_destroy();
+    $newURL = 'Views/home.php';
+    //$newURL = 'Controllers/logout.php';
+    include_once ($newURL);
+    //header('Location: '. $newURL);
 });
 
 // Get route example
