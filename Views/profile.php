@@ -2,9 +2,9 @@
 	session_start();
 	$options = "";
 	if (isset($_SESSION['id'])) {
-		$options .= '<li><a class="left" href="search.php">My NightReadings</a></li><li><a class="left" href="profile.php">Profile</a></li><li><a class="right" href="logout.php">Logout</a></li>';
+		$options .= '<li><a class="left" href="search.php">My NightReadings</a></li><li><a class="right" href="logout.php">Logout</a></li>';
 	} else {
-		$options .= '<li><a class="right" href="login.php">Login</a></li>';
+		$options .= '<li><a class="right" href="login.php">Login</a></li><li><a class="right" href="signup.php">Sign Up</a></li>';
 	}
 ?>
 <!DOCTYPE html>
@@ -16,36 +16,35 @@
 		<link rel="stylesheet" type="text/css" href="../resources/css/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="../resources/js/ajax.js"></script>
-		<title>Sign up</title>
+		<script src="../resources/js/profile.js"></script>
+		<title>Profile</title>
 	</head>
 	<body>
-
+		
 		<ul>
 			<li><a class="logo" href="/">NightReader</a></li>
 			<li><a class="left" href="book.php">NightReadings</a></li>
-			<?php
-				echo $options;
-			?>
+			<?php echo $options; ?>
 		</ul>
 
-		<div class="container">
-			<h1>Sign up</h1> <br>
-			<form id="signup">
-				<p id="error"></p>
-				<label for="fname">First name:</label>
-				<input type="text" id="fname" name="fname"><br><br>
-				<label for="lname">Last name:</label>
-				<input type="text" id="lname" name="lname"><br><br>
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email"><br><br>
-				<label for="username">Username:</label>
-				<input type="text" id="username" name="username"><br><br>
-				<label for="password">Password:</label>
-				<input type="password" id="password" name="password"><br><br>
-				<button id="submit" type="submit">Register</button>
-			</form>
+		<div class="card">
+			<div class="container4">
+				<h2 class="username"> 
+					Welcome <span class="user"> <?php echo $_SESSION['username'] ?> </span> !
+				</h2> <br>
+				<h3 class="fullname">
+					Full name: <span class="name"> <?php echo $_SESSION['fname'] . ' ' . $_SESSION['lname'] ?> <span>
+				</h3>
+				<h3 class="email">
+					Email: <span class="mail"> <?php echo $_SESSION['email'] ?> <span>
+				</h3> <br> <br> <br>
+				<button class="delete">Delete account</button> <br> <br>
+				<button class="changepass">Change password</button>
+			</div>	
 		</div>
+		
+		<h1 class="preview-label">Your last 3 favorite poems:</h1>
+		<div id="preview"></div>
 
 		<footer>
 			<p>NightReader footer</p>

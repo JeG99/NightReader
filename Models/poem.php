@@ -108,6 +108,21 @@ class Poem {
             return $stmt;
     }
 
+    function firstFive($user_id) {
+        $query = "
+            SELECT POEMS.POEM_ID, POEMS.POEM_TITLE, POEMS.POEM_CONTENT, POEMS.POEM_URL, POEMS.POET_NAME, POEMS.POET_URL
+            FROM " . $this->table_name . " POEMS, " . $this->weak_table_name_1 . " IDS
+            WHERE POEMS.POEM_ID = IDS.POEM_ID AND IDS.USER_ID = :user_id
+            ORDER BY POEMS.POEM_ID DESC
+            LIMIT 3";
+
+            $stmt = $this->conn->prepare($query);
+            $user_id = htmlspecialchars(strip_tags($user_id));
+            $stmt->bindParam(":user_id", $user_id);
+            $stmt->execute();
+            return $stmt;
+    }
+
     public function getPid() {
         return $this->pid;
     }

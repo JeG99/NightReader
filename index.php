@@ -16,6 +16,12 @@ Route::add('/home.php',function(){
     //header('Location: '. $newURL);
 });
 
+Route::add('/profile.php',function(){
+    $newURL = 'Views/profile.php';
+    include_once ($newURL);
+    //header('Location: '. $newURL);
+});
+
 Route::add('/search.php',function(){
     $newURL = 'Views/search.php';
     include_once ($newURL);

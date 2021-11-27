@@ -3,7 +3,7 @@
 	$options = "";
 	$buttons = "";
 	if (isset($_SESSION['id'])) {
-		$options .= '<li><a class="left" href="search.php">My NightReadings</a></li><li><a class="left" href="">Profile</a></li><li><a class="right" href="logout.php">Logout</a></li>';
+		$options .= '<li><a class="left" href="search.php">My NightReadings</a></li><li><a class="left" href="profile.php">Profile</a></li><li><a class="right" href="logout.php">Logout</a></li>';
 		$buttons .= '<button id="submit" type="submit">New poem</button> &nbsp; <button id="save" type="save">Save</button></div>'; 
 	} else {
 		$options .= '<li><a class="right" href="login.php">Login</a></li><li><a class="right" href="signup.php">Sign Up</a></li>';

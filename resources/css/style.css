@@ -114,6 +114,75 @@ li .logo:hover {
 	font-size: 200px;
 }
 
+.card {
+	border-radius: 15px;
+	padding: 50px;
+	background-color: #222;
+	color: white;
+	top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 400px;
+	width: 600px;
+	text-align: center;
+}
+
+.preview-label {
+	color: white;
+	position: relative;
+	top: 8%;
+	text-align: center;
+}
+
+.poem-title {
+	text-align: center;
+	position: relative;
+	top: 10%;
+	font-weight: bold;
+}
+
+.poem-content {
+	position: relative;
+	top: 20%;
+	text-align: left;
+}
+
+.poem-link {
+	position: relative;
+	top: 25%;
+}
+
+.poem {
+	position: relative;
+	top: 10%;
+	display: inline-block;
+	padding: 15px;
+	margin: 10px;
+	color: white;
+	background-color: #222;
+	height: 250px;
+	width: 300px;
+	border-radius: 15px;
+}
+
+.user {
+	color: rgb(63,96,204);
+	font-weight: lighter;
+}
+
+.fullname .name {
+	font-weight: lighter;
+}
+
+.email .mail {
+	font-weight: lighter;
+}
+
+.container4 .username {
+	font-weight: lighter;
+	font-size: 40px;
+}
+
 .success {
 	display: none;
 	position: relative;
@@ -204,6 +273,16 @@ li .logo:hover {
 
 .loading {
     display: block;
+}
+
+#preview {
+	top: 8%;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
 }
 
 #poem {
