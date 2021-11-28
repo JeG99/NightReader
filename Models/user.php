@@ -43,7 +43,6 @@ class User {
 				$_SESSION['lname'] = $this->getLastName();
 				$_SESSION['username'] = $this->getUsername();
 				$_SESSION['email'] = $this->getEmail();
-
 				return 1;
 			} 
 			else if($row == null) {

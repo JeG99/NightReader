@@ -86,23 +86,26 @@ class Poem {
 		$this->poet_url = $row['POET_URL'];
 	}
 
-    function search($keywords) {
+    function search($keywords, $user_id) {
         $query = "
-            SELECT POEMS.POEM_ID, POEMS.POEM_TITLE, POEMS.POEM_CONTENT, POEMS.POEM_URL, POEMS.POET_NAME, POEMS.POET_URL
-            FROM " . $this->table_name . " POEMS
-            WHERE
-                POEMS.POEM_TITLE LIKE ? OR
-                POEMS.POEM_CONTENT LIKE ? OR
-                POEMS.POET_NAME LIKE ?
-            ORDER BY POEMS.POEM_ID DESC";
+            SELECT * FROM (
+                SELECT POEM_TITLE, POEM_CONTENT, POEM_URL, POET_NAME, POET_URL
+                FROM " . $this->table_name . " T1, " . $this->weak_table_name_1 . " T2
+                WHERE T1.POEM_ID = T2.POEM_ID AND T2.USER_ID = ? 
+            ) T3
+            WHERE 
+            POEM_TITLE LIKE ? OR POEM_CONTENT LIKE ? OR POET_NAME LIKE ?";
 
             $stmt = $this->conn->prepare($query);
 
             $keywords = htmlspecialchars(strip_tags($keywords));
+            $user_id = htmlspecialchars(strip_tags($user_id));
+            
             $keywords = "%" . $keywords . "%";
-            $stmt->bindParam(1, $keywords);	
-            $stmt->bindParam(2, $keywords);
+            $stmt->bindParam(1, $user_id);
+            $stmt->bindParam(2, $keywords);	
             $stmt->bindParam(3, $keywords);
+            $stmt->bindParam(4, $keywords);
 
             $stmt->execute();
             return $stmt;

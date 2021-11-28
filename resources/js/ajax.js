@@ -100,34 +100,44 @@ $(document).ready( function() {
 					xhr.abort();
 				}
 			});
-
-			xhr = $.ajax({
-				type: 'post',
-				url: '../../Controllers/forgot_password.php',
-				data: $('form').serialize(),
-				success: function (data) {
-					switch(data) {
-						case '1':
-							console.log("Contraseña cambiada");
-							$(".container").hide("drop");
-							$(".success").fadeIn();
-							break;
-						case '2':
-							document.getElementById("error").innerHTML = "ERROR: Passwords must match.";
-							break;
-						default:
-							console.log("wtf", data);
+			if (email == $('#email').val()) {
+				console.log(email, $('#email').val());
+				xhr = $.ajax({
+					type: 'post',
+					url: '../../Controllers/forgot_password.php',
+					data: $('form').serialize(),
+					success: function (data) {
+						switch(data) {
+							case '1':
+								console.log("Contraseña cambiada");
+								$(".container").hide("drop");
+								$(".success").fadeIn();
+								break;
+							case '2':
+								document.getElementById("error").innerHTML = "ERROR: Passwords must match.";
+								break;
+							default:
+								console.log("wtf", data);
+						}
+						if(data > '1') {
+							document.getElementById("email").style.background = "#FF8A97";
+							document.getElementById("password1").style.background = "#FF8A97";
+							document.getElementById("password2").style.background = "#FF8A97";
+							$("#email").effect("shake", {distance: 5});
+							$("#password1").effect("shake", {distance: 5});
+							$("#password2").effect("shake", {distance: 5});
+						}
 					}
-					if(data > '1') {
-						document.getElementById("email").style.background = "#FF8A97";
-						document.getElementById("password1").style.background = "#FF8A97";
-						document.getElementById("password2").style.background = "#FF8A97";
-						$("#email").effect("shake", {distance: 5});
-						$("#password1").effect("shake", {distance: 5});
-						$("#password2").effect("shake", {distance: 5});
-					}
-				}
-			});
+				});
+			} else {
+				document.getElementById("error").innerHTML = "ERROR: Check your email.";
+				document.getElementById("email").style.background = "#FF8A97";
+				document.getElementById("password1").style.background = "#FF8A97";
+				document.getElementById("password2").style.background = "#FF8A97";
+				$("#email").effect("shake", {distance: 5});
+				$("#password1").effect("shake", {distance: 5});
+				$("#password2").effect("shake", {distance: 5});
+			}
 		});
 	});
 

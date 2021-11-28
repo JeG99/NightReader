@@ -23,6 +23,7 @@ $(document).ready( function() {
                 dataType: 'json',
                 success: function(data) {
                     response = data;
+                    $('#save').show();
                     $('#author').text(data[0].poet.name);
                     $('#title').text(data[0].title);
                     $('#poem').text(data[0].content);
@@ -37,6 +38,8 @@ $(document).ready( function() {
             url: '../../Controllers/save_poem.php',
             data: response[0],
             success: function(data) {
+                $('#save').hide("fast");
+                $('.success').show("fast").delay(1000).fadeOut();
                 console.log(data);
             }
         })
