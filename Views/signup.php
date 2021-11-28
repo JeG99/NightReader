@@ -4,7 +4,7 @@
 	if (isset($_SESSION['id'])) {
 		$options .= '<li><a class="left" href="search.php">My NightReadings</a></li><li><a class="left" href="profile.php">Profile</a></li><li><a class="right" href="logout.php">Logout</a></li>';
 	} else {
-		$options .= '<li><a class="right" href="login.php">Login</a></li>';
+		$options .= '<li><a class="right" href="login.php">Login</a></li><li><a class="right selected" href="signup.php">Sign Up</a></li>';
 	}
 ?>
 <!DOCTYPE html>

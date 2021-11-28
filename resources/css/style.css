@@ -99,6 +99,10 @@ li .logo:hover {
 	border-radius: 15px;
 }
 
+.selected {
+	background: #45608C;
+}
+
 .poem-box {
 	visibility: hidden;
 	top: 5%;

@@ -28,6 +28,7 @@
 
 		<ul>
 			<li><a class="logo" href="/">NightReader</a></li>
+			<li><a class="left selected" href="book.php">NightReadings</a></li>
 			<?php
 				echo $options;
 			?>
