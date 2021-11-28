@@ -77,6 +77,10 @@ Route::add('/logout.php',function(){
     $newURL = 'Views/home.php';
     include_once ($newURL);
 });
+/*
+Route::add('/(.*)/', function ($route) {
+    if(!in_array($route, Route))
+});*/
 
 // Get route example
 Route::add('/contact',function(){

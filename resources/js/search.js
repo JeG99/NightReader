@@ -19,7 +19,7 @@ $(document).ready( function () {
             objList.forEach(element => {
                 entries += "<tr><td>" + element.POEM_TITLE + "</td>";
                 entries += "<td>" + element.POET_NAME + "</td>";
-                entries += '<td><a class="poem-link" href=' + element.POEM_URL + '>Read "' + element.POEM_TITLE + '" in Poemist.com</a></td></tr>';
+                entries += '<td><a class="poem-link" target="_blank" href=' + element.POEM_URL + '>Read "' + element.POEM_TITLE + '" in Poemist.com</a></td></tr>';
             });
             $(".note").hide();
             $("#result").html(

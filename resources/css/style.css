@@ -125,6 +125,17 @@ li .logo:hover {
 	font-size: 200px;
 }
 
+.container6 h1 {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+	color: ghostwhite;
+	transition: all 0.4s linear;
+	font-size: 100px;
+}
+
 .card {
 	border-radius: 15px;
 	padding: 50px;
@@ -271,6 +282,10 @@ li .logo:hover {
 .success h1 {
 	position: relative;
 	font-weight: lighter;
+}
+
+.failure {
+	height: 150px;
 }
 
 .header:hover {

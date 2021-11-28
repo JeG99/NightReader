@@ -8,7 +8,7 @@ $(document).ready( function () {
         objList.forEach(element => {
             entries += '<span class="poem"><div class="poem-title">' + element.POEM_TITLE + '</div>';
             entries += '<div class="poem-content">' + element.POEM_CONTENT.substring(0, 100) + "...</div>";
-            entries += '<div class="poem-link"><a href=' + element.POEM_URL + '>Read "' + element.POEM_TITLE + '" in Poemist.com</a></div></span>';
+            entries += '<div class="poem-link"><a target="_blank" href=' + element.POEM_URL + '>Read "' + element.POEM_TITLE + '" in Poemist.com</a></div></span>';
         });
         if (entries != '') {
             $('.on-delete').before('<h1 class="preview-label">Your last 3 favorite poems:</h1><div id="preview"></div>');
