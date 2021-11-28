@@ -95,7 +95,9 @@ class Poem {
             ) T3
             WHERE 
             POEM_TITLE LIKE ? OR POEM_CONTENT LIKE ? OR POET_NAME LIKE ?";
-
+            /*
+            SELECT POEM_TITLE, POEM_CONTENT, POEM_URL, POET_NAME, POET_URL FROM nightreader_poems T1 LEFT JOIN nightreader_userpoems ON T1.POEM_ID = nightreader_userpoems.POEM_ID WHERE nightreader_userpoems.USER_ID = 37 
+            */
             $stmt = $this->conn->prepare($query);
 
             $keywords = htmlspecialchars(strip_tags($keywords));
