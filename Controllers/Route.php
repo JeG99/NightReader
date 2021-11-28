@@ -17,7 +17,6 @@ class Route
 
     public static function pathNotFound($function){
         self::$pathNotFound = $function;
-        //echo "me da amsiedad";
     }
 
     public static function methodNotAllowed($function){
@@ -28,25 +27,21 @@ class Route
 
         // Parse current url
         $parsed_url = parse_url($_SERVER['REQUEST_URI']);//Parse Uri
-        //echo $_SERVER['REQUEST_URI'];
         if(isset($parsed_url['path'])){
             $path = $parsed_url['path'];
         }else{
             $path = '/';
         }
-        //echo $path;
         // Get current request method
         $method = $_SERVER['REQUEST_METHOD'];
         $path_match_found = false;
         $route_match_found = false;
-        //var_dump( self::$routes);
         foreach(self::$routes as $route){
 
 
             // If the method matches check the path
             // Add basepath to matching string
             if($basepath!=''&&$basepath!='/'){
-                //var_dump($basepath);
                 $route['expression'] = '('.$basepath.')'.$route['expression'];
             }
 
@@ -54,11 +49,7 @@ class Route
             $route['expression'] = '^'.$route['expression'];
             // Add 'find string end' automatically
             $route['expression'] = $route['expression'].'$';
-            //var_dump($route['expression']);
 
-//             echo $route['expression'].'<br/>';
- //           echo $path . " ". $route['expression'] . '<br />';
-//echo preg_match('#'.$route['expression'].'#',$path);
             // Check path match
             if(preg_match('#'.$route['expression'].'#',$path,$matches)){
 
@@ -82,8 +73,6 @@ class Route
                 }
             }
         }
-//echo "acaaa es: ";
- //       var_dump( $route_match_found);
         // No matching route was found
         if(!$route_match_found){
             // But a matching path exists
