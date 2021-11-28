@@ -62,6 +62,34 @@ class User {
 
 	function signup() {
 		$query = "
+			SELECT * 
+			FROM " . $this->table_name . "
+			WHERE USERNAME=:username";
+		$stmt = $this->conn->prepare($query);
+		$this->user = htmlspecialchars(strip_tags($this->user));
+		$stmt->bindParam(":username", $this->user);
+
+		if($stmt->execute()) {
+			if($data = $stmt->fetch()) {
+				return 3;
+			}
+		}
+		
+		$query = "
+			SELECT * 
+			FROM " . $this->table_name . "
+			WHERE USER_EMAIL=:user_email";
+		$stmt = $this->conn->prepare($query);
+		$this->email = htmlspecialchars(strip_tags($this->email));
+		$stmt->bindParam(":user_email", $this->email);
+
+		if($stmt->execute()) {
+			if($data = $stmt->fetch()) {
+				return 4;
+			}
+		}
+
+		$query = "
 			INSERT INTO " . $this->table_name . "
 			SET USER_FNAME=:user_fname, USER_LNAME=:user_lname, USERNAME=:username, PASSWORD=:password, USER_EMAIL=:user_email";
 
@@ -80,10 +108,10 @@ class User {
 		$stmt->bindParam(":user_email", $this->email);
 
 		if($stmt->execute()) {
-			return true;
+			return 1;
 		}
 
-		return false;
+		return 2;
 		
 	}
 

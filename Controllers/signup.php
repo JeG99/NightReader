@@ -9,11 +9,8 @@
 	$user->setEmail($_POST['email']);
 	$user->setPassword(sha1($_POST['password']));
 
-	if($user->signup()) {
-		echo "1";
-	}
-	else {
-		echo "2";	
+	if($result = $user->signup()) {
+		echo $result;
 	}
 	$conn = null;
 ?>

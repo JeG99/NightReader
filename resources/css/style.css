@@ -195,6 +195,8 @@ li .logo:hover {
 }
 
 .preview-label {
+	font-weight: lighter;
+	font-style: italic;
 	color: white;
 	position: relative;
 	top: 8%;
@@ -288,6 +290,10 @@ li .logo:hover {
 	height: 150px;
 }
 
+.header {
+	font-weight: lighter;
+}
+
 .header:hover {
 	color: #000;
 }
@@ -297,6 +303,7 @@ li .logo:hover {
 }
 
 .note {
+	font-weight: lighter;
 	position: relative;
 	top: 37%;
 	text-align: center;

@@ -5,7 +5,20 @@ $(document).ready( function() {
 		ajaxStop: function() { $('.loading').css('visibility', 'hidden'); }    
 	});
 
+	const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+	function generateToken() {
+		let result = ' ';
+		const charactersLength = characters.length;
+		for ( let i = 0; i < 6; i++ ) {
+			result += characters.charAt(Math.floor(Math.random() * charactersLength));
+		}
+
+		return result;
+	}
+
 	var xhr;
+	var token;
 
 	// login
 	$(function () {
@@ -79,6 +92,12 @@ $(document).ready( function() {
 							break;
 						case '2':
 							document.getElementById("error").innerHTML = "ERROR: This account could not be created.";
+							break;
+						case '3':
+							document.getElementById("error").innerHTML = "This username is already in use.";
+							break;
+						case '4':
+							document.getElementById("error").innerHTML = "This email is already in use.";
 							break;
 						default:
 							console.log("wtf", data);
