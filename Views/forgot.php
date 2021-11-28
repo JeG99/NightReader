@@ -10,14 +10,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="shortcut icon" type="image/jpg" href="resources/img/favicon.ico"/>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="../resources/css/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script type="text/javascript">
+			var email='<?php echo $_SESSION['email'];?>';
+		</script>
 		<script src="../resources/js/ajax.js"></script>
-		<title>Forgot password</title>
+		<title>Change password</title>
 	</head>
 	<body>
 
@@ -33,7 +37,7 @@
 			<h1>Password successfully changed</h1> <br>
 		</div>
 		<div class="container">
-			<h1>Forgot password</h1> <br>
+			<h1>Change password</h1> <br>
 			<form id="forgot">
 				<p id="error"></p>
 				<label for="email">Email:</label>
@@ -47,7 +51,7 @@
 		</div>
 
 		<footer>
-			<p>NightReader footer</p>
+			<p>Made with ❤️ by the NightReader teamr</p>
 		</footer>
 		<script type="text/javascript" href="../resources/js/ajax.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

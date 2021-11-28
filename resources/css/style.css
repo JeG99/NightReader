@@ -18,8 +18,17 @@ input {
 }
 
 button {
-	border-style: none;
+	transition: all 0.4s linear;
 	border-radius: 5px;
+	background: #333;
+	width: 300px;
+	color: aliceblue;
+	border-color: transparent;
+}
+
+button:hover {
+	border-style: groove;
+	border-color: #688ecc;
 }
 
 input {
@@ -59,7 +68,9 @@ li a {
 }
 
 li a:hover {
+	transition: all 0.4s linear;
   	background-color: #688ecc;
+	color: black;
 }
 
 li .logo:hover {
@@ -82,7 +93,7 @@ li .logo:hover {
 	top: 200px;
 	text-align: center;
 	background: #222;
-	width: 350px;
+	width: 370px;
 	padding: 20px;
 	height: auto;
 	border-radius: 15px;
@@ -127,6 +138,51 @@ li .logo:hover {
 	text-align: center;
 }
 
+.on-delete {
+	border-style: double;
+	border-color: red;
+	top: 50%;
+	left: 50%;
+	height: 330px;
+	width: 800px;
+	position: absolute;
+	margin-left: -400px;
+	margin-top: -200px;
+	visibility: hidden;
+	padding: 30px;
+	background: #222;
+}
+
+.on-delete h2 {
+	top: 20px;
+	position: relative;
+	top: 0px;
+	font-weight: lighter;
+}
+
+.on-delete label {
+	padding: 10px;
+	position: relative;
+	top: 5px;
+}
+
+.on-delete input {
+	right: 170px;
+	width: 300px;
+	height: 25px;
+	padding: 10px;
+	position: relative;
+	top: 15px;
+}
+
+.on-delete button {
+	transition: all 0.0s linear;
+	position: relative;
+	top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .preview-label {
 	color: white;
 	position: relative;
@@ -145,11 +201,20 @@ li .logo:hover {
 	position: relative;
 	top: 20%;
 	text-align: left;
+	font-style: italic;
 }
 
 .poem-link {
+	text-decoration: none;
 	position: relative;
 	top: 25%;
+	color: #688ecc;
+	font-style: normal;
+	transition: all 0.4s linear;
+}
+
+.poem-link:hover {
+	color: azure;
 }
 
 .poem {
@@ -184,15 +249,28 @@ li .logo:hover {
 }
 
 .success {
+	color: #688ecc;
+	margin-left: auto;
+	margin-right: auto;
 	display: none;
-	position: relative;
-	top: 200px;
+	position: absolute;
+	right: 50%;
+	margin-right: -300px;
+	margin-top: -100px;
+	top: 50%;
 	text-align: center;
 	background: #222;
-	width: 350px;
+	width: 600px;
 	padding: 20px;
-	height: auto;
+	height: 100px;
 	border-radius: 15px;
+	border-color: #688ecc;
+	border-style: double;
+}
+
+.success h1 {
+	position: relative;
+	font-weight: lighter;
 }
 
 .header:hover {
@@ -236,6 +314,9 @@ li .logo:hover {
 }
 
 .search-bar button {
+	display: inline-flex;
+ 	align-items: center; 
+	width: 100px;
 	padding: 10px;
 	margin: 2.5px;
 	height: 40px;

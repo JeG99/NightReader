@@ -75,9 +75,7 @@ Route::add('/logout.php',function(){
     session_unset();
     session_destroy();
     $newURL = 'Views/home.php';
-    //$newURL = 'Controllers/logout.php';
     include_once ($newURL);
-    //header('Location: '. $newURL);
 });
 
 // Get route example

@@ -13,6 +13,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="shortcut icon" type="image/jpg" href="resources/img/favicon.ico"/>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -32,6 +33,7 @@
 			?>
 		</ul>
 
+		
 		<div class="container poem-box">
 			<div class="buttons-container">
 				<h1 id="title" class=""></h1>
@@ -42,6 +44,9 @@
 				<?php echo $buttons ?>
 		</div>
 
+		<div class="success">
+			<h1>Poem saved!</h1>
+		</div>
 		<!--
 		<footer>
 			<p>NightReader footer</p>
